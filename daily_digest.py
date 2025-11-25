@@ -8,21 +8,41 @@ from jinja2 import Template
 # --- CONFIGURATION ---
 # Add your RSS feeds here
 RSS_FEEDS = [
-    "https://techcrunch.com/feed/",
-    "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "https://news.ycombinator.com/rss",
-    # Add more...
+
+    "https://news.ycombinator.com/rss",  
+    
+    
+    "https://astralcodexten.substack.com/feed",  
+    "https://aella.substack.com/feed",           
+    "https://feeds.feedburner.com/marginalrevolution/feed", 
+    
+    "https://www.lesswrong.com/feed.xml?view=curated-rss", 
+    "https://arxiv.org/rss/cs.AI", 
+    
+    "https://www.indiehackers.com/feed", 
+    
+    "https://spacenews.com/feed/",       
+    
+    "https://www.politico.eu/feed/",     
+    "https://www.euractiv.com/feed/"     
 ]
 
 # Define what you care about
 USER_INTERESTS = """
-I am interested in Artificial Intelligence, Python programming, Geopolitics in Europe, 
-and Space exploration. I do not care about sports, celebrity gossip, or crypto.
+I am looking for high-signal content. My specific interests are:
+
+1. HARD TECH & AI: LLMs, agents, transformers, code, open-source models, and technical breakthroughs.
+2. THE FUTURE: Transhumanism, longevity, biohacking, and space colonization (SpaceX, Starship, Mars).
+3. BUSINESS: Bootstrapped startups, indie hacking, SaaS metrics, interesting VC-backed companies.
+4. SOCIOLOGY & DATA: Unconventional social studies, evolutionary psychology, prediction markets, and contrarian takes on society.
+5. GEOPOLITICS: Specifically European strategic autonomy, EU defense, and macro-political shifts in Europe. 
+
+EXCLUDE: Generic gadget reviews (iPhone rumors), celebrity gossip, sports, partisan US domestic politics (unless it affects global tech), and crypto shitcoins (unless technical blockchain innovation).
 """
 
 # Setup Gemini
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 def get_headlines():
     print("Fetching RSS feeds...")
@@ -111,8 +131,6 @@ def save_html(markdown_content):
     </html>
     """
     
-    # Convert Markdown to HTML (using a simple lib or just let the LLM output HTML? 
-    # Let's use 'markdown' lib for safety)
     import markdown
     html_content = markdown.markdown(markdown_content)
     
