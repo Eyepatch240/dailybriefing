@@ -40,7 +40,7 @@ EXCLUDE: Generic gadget reviews (iPhone rumors), celebrity gossip, sports, parti
 
 # Setup Gemini
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-model = genai.GenerativeModel('gemini-2.5-flash')
+model = genai.GenerativeModel('gemini-2.5-pro')
 
 def get_headlines():
     print("Fetching RSS feeds...")
