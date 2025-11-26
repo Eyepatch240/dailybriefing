@@ -116,10 +116,10 @@ def generate_digest(content_text):
 def save_html(markdown_content):
     html_template = """
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang=\"en\">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset=\"UTF-8\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         <title>Daily Briefing - {{ date }}</title>
         <style>
             :root {
@@ -133,21 +133,40 @@ def save_html(markdown_content):
                 margin: 0 auto;
                 padding: 42px 18px 72px 18px;
                 font-size: 1.08rem;
-                line-height: 1.75;
+                line-height: 1.85; /* Increased for easier reading */
             }
             h1, h2, h3, h4 {
                 color: #e4e8ee;
                 font-weight: 600;
                 letter-spacing: -0.02em;
-                margin-bottom: .5em;
-                margin-top: 2em;
+                margin-bottom: 0.92em;
+                margin-top: 2.1em;
             }
             h1 {
                 font-size: 1.85rem;
                 margin-top: 0.2em;
-                margin-bottom: 0.5em;
+                margin-bottom: 0.6em;
                 border-bottom: 1px solid #22242b;
                 padding-bottom: 0.35em;
+            }
+            h2 {
+                font-size: 1.29rem;
+                margin-top: 2.5em;
+                margin-bottom: 0.64em;
+            }
+            /* Article Card Style (optional, minimalist) */
+            .article-block {
+                margin-bottom: 2.7em;
+                margin-top: 2.7em;
+                padding: 1.3em 1.1em;
+                background: #191c21;
+                border-radius: 9px;
+                border: 1px solid #23252c;
+            }
+            hr {
+                border: none;
+                border-top: 1px solid #23252d;
+                margin: 2.8em 0 2.3em;
             }
             a {
                 color: #99c6ff;
@@ -163,10 +182,9 @@ def save_html(markdown_content):
                 border-radius: 3px;
                 padding: 0.17em 0.33em;
             }
-            hr {
-                border: none;
-                border-top: 1px solid #23252d;
-                margin: 2.2em 0 1.2em;
+            p {
+                margin-bottom: 1.38em;
+                margin-top: 0.4em; /* For space between body and heading */
             }
             ul {
                 margin-top: 0.6em;
@@ -179,7 +197,7 @@ def save_html(markdown_content):
         </style>
     </head>
     <body>
-        <h1>Daily Briefing <span style="color:#686d79;font-weight:300;font-size:0.92em;">{{ date }}</span></h1>
+        <h1>Daily Briefing <span style=\"color:#686d79;font-weight:300;font-size:0.92em;\">{{ date }}</span></h1>
         <hr>
         <div>{{ content }}</div>
     </body>
