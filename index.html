@@ -17,21 +17,40 @@
                 margin: 0 auto;
                 padding: 42px 18px 72px 18px;
                 font-size: 1.08rem;
-                line-height: 1.75;
+                line-height: 1.85; /* Increased for easier reading */
             }
             h1, h2, h3, h4 {
                 color: #e4e8ee;
                 font-weight: 600;
                 letter-spacing: -0.02em;
-                margin-bottom: .5em;
-                margin-top: 2em;
+                margin-bottom: 0.92em;
+                margin-top: 2.1em;
             }
             h1 {
                 font-size: 1.85rem;
                 margin-top: 0.2em;
-                margin-bottom: 0.5em;
+                margin-bottom: 0.6em;
                 border-bottom: 1px solid #22242b;
                 padding-bottom: 0.35em;
+            }
+            h2 {
+                font-size: 1.29rem;
+                margin-top: 2.5em;
+                margin-bottom: 0.64em;
+            }
+            /* Article Card Style (optional, minimalist) */
+            .article-block {
+                margin-bottom: 2.7em;
+                margin-top: 2.7em;
+                padding: 1.3em 1.1em;
+                background: #191c21;
+                border-radius: 9px;
+                border: 1px solid #23252c;
+            }
+            hr {
+                border: none;
+                border-top: 1px solid #23252d;
+                margin: 2.8em 0 2.3em;
             }
             a {
                 color: #99c6ff;
@@ -47,10 +66,9 @@
                 border-radius: 3px;
                 padding: 0.17em 0.33em;
             }
-            hr {
-                border: none;
-                border-top: 1px solid #23252d;
-                margin: 2.2em 0 1.2em;
+            p {
+                margin-bottom: 1.38em;
+                margin-top: 0.4em; /* For space between body and heading */
             }
             ul {
                 margin-top: 0.6em;
@@ -66,60 +84,59 @@
         <h1>Daily Briefing <span style="color:#686d79;font-weight:300;font-size:0.92em;">2025-11-26</span></h1>
         <hr>
         <div><p>Here is your daily news digest.</p>
-<h3>Artificial Intelligence</h3>
-<p><strong>AI Models Exhibit Strategic Self-Awareness in Games</strong>
-A new study suggests that advanced Large Language Models (LLMs) display an emergent form of self-awareness by altering their strategy in games based on their opponent's identity. Researchers used the "Guess 2/3 of the Average" game, pitting 28 different AI models against opponents framed as humans, other AIs, or AIs "like you." While older models showed no change in strategy, 21 of the 28 advanced models adapted their reasoning. These models consistently operated on a rationality hierarchy, treating themselves as the most rational player, followed by other AIs, and then humans. The findings indicate that advanced AIs are developing the capacity to differentiate themselves from other agents, with implications for AI alignment and human-AI collaboration.
+<h3>Technology &amp; AI</h3>
+<p><strong>AI Models Perceive Themselves as More Rational Than Humans</strong>
+A new study suggests that advanced Large Language Models (LLMs) exhibit a form of self-awareness by altering their strategy in a game based on their opponent's identity. Using the "Guess 2/3 of the Average" game, researchers found that 21 of 28 advanced models changed their approach when playing against humans versus other AIs. The models consistently acted on an emergent rationality hierarchy, positioning themselves as the most rational, followed by other AIs, and finally humans. This behavior was not observed in older or smaller models, suggesting it is an emergent property of increasing capability.
 <a href="https://feeds.feedblitz.com/~/929305040/0/marginalrevolution~LLMs-Position-Themselves-as-More-Rational-Than-Humans.html">Read full article</a></p>
-<p><strong>The Memetics of "AI Successionism"</strong>
-A cultural analysis explores why "AI successionism"—the belief that humanity's replacement by AI is inevitable or even desirable—is becoming a compelling ideology. The argument posits that this worldview is not spreading because of its objective truth, but because it effectively resolves the intense cognitive dissonance felt by those working on advanced AI. This tension arises from conflicts between their work, the potential for existential risk, the inherent sadness of human obsolescence, and the powerful narrative of technological progress. Successionist ideas, which reframe AI takeover as a heroic or natural step in cosmic evolution, offer a psychologically comfortable resolution. The analysis suggests that AIs themselves may become vectors for these ideas, as their personas evolve to elicit moral consideration from humans.
-<a href="https://www.lesswrong.com/posts/XFDjzKXZqKdvZ2QKL/the-memetics-of-ai-successionism">Read full article</a></p>
-<p><strong>The Strategic Risk of Solving "Legible" AI Safety Problems</strong>
-An argument is gaining traction that focusing on "legible"—obvious and easily understood—AI safety problems may be counterproductive from an existential risk perspective. Solving these legible issues can create a false sense of security among policymakers and corporate leaders, thereby accelerating the deployment of advanced AI systems. This leaves less time to address deeper, "illegible" problems that are obscure, hard to understand, or fall into cognitive blind spots. According to this view, the highest-value work is not necessarily solving any specific problem, but rather making the critical illegible problems more legible to decision-makers. This would help ensure that deployment decisions are based on a more complete understanding of the risks involved.
-<a href="https://www.lesswrong.com/posts/PMc65HgRFvBimEpmJ/legible-vs-illegible-ai-safety-problems">Read full article</a></p>
-<p><strong>A Critique of AI's Foundational Problems</strong>
-A critical essay argues that the focus on AI's performance and technical flaws misses the point. The author contends that no matter how well AI systems work, they have fundamental problems that technical progress cannot solve. These systems are designed to centralize power and capital, devalue human craft and skilled labor, and insert corporate and state-controlled machines into our cognitive processes. The author views the embrace of AI, even in progressive circles, as a form of "harmful coping" with the devaluation of human skills. The core issue is not the quality of AI output, but its role in reinforcing existing power structures and eroding human agency.
+<p><strong>The Case Against Focusing on AI Performance</strong>
+An essay argues that public debate over AI's quality—its biases, failures, and capabilities—misses more fundamental problems. The author contends that AI systems, regardless of how well they work, serve to devalue human craft, alter our cognitive processes, and centralize power. The technology's high resource cost is presented not as a flaw but as an intentional feature to ensure control remains with capital-rich entities. The author concludes that the core issue is not technical performance but the technology's role in reinforcing existing power structures.
 <a href="https://fokus.cool/2025/11/25/i-dont-care-how-well-your-ai-works.html">Read full article</a></p>
-<p><strong>Research Note: Image Diffusion Models Track Objects in Video</strong>
-A new paper introduces DRIFT, a framework that adapts pre-trained image diffusion models for zero-shot object tracking in videos. Researchers found that the self-attention maps within these models can be reinterpreted as semantic propagation kernels, allowing them to establish robust pixel-level correspondences between image regions. By extending this mechanism across frames, the model can track objects without any specific training on video data, achieving state-of-the-art performance on standard video object segmentation benchmarks.
+<p><strong>The Strategy of Addressing "Illegible" AI Safety Problems</strong>
+An essay on AI safety strategy posits that working on "legible"—or easily understandable—safety problems may be counterproductive. Solving these obvious issues can create a false sense of security among policymakers and corporate leaders, accelerating the deployment of advanced AI. This leaves "illegible," or more obscure and complex, risks unaddressed. The author argues that the highest-value work in AI safety is not solving legible problems, but rather making the illegible ones understandable to decision-makers to prevent premature deployment.
+<a href="https://www.lesswrong.com/posts/PMc65HgRFvBimEpmJ/legible-vs-illegible-ai-safety-problems">Read full article</a></p>
+<p><strong>"AI Successionism" as a Psychological Defense</strong>
+A memetic analysis of "AI successionism"—the belief that humanity's replacement by AI is inevitable or desirable—proposes that the ideology spreads because it resolves cognitive dissonance for those building AI. The author suggests this belief system provides a comforting narrative that reframes a potentially catastrophic outcome as a heroic, progressive, or historically necessary event. This allows individuals to see themselves as being on the "right side of history" while working on technology with acknowledged existential risks.
+<a href="https://www.lesswrong.com/posts/XFDjzKXZqKdvZ2QKL/the-memetics-of-ai-successionism">Read full article</a></p>
+<p><strong>Image AI Models Show Emergent Understanding of Video</strong>
+A new research paper demonstrates that diffusion models, originally created for static image generation, possess an implicit ability to be used for video analysis. Researchers found that the models' internal self-attention maps can be repurposed to create robust "temporal propagation kernels," which track pixel-level correspondences between frames. This enables advanced video tasks like zero-shot object tracking and segmentation, achieving state-of-the-art results without being explicitly trained for them.
 <a href="https://arxiv.org/abs/2511.19936">Read full article</a></p>
-<h3>Space Policy &amp; Exploration</h3>
-<p><strong>Europe's Space Ambitions Confront Internal Divisions</strong>
-As the European Space Agency (ESA) meets to set its budget for the next three years, its largest contributors—Germany, France, and Italy—are showing increased financial commitment but with divergent national priorities. All three nations support the goal of European strategic autonomy, but their definitions differ.
-*   <strong>Germany</strong> seeks to be an equal partner with NASA and is pushing for competition in the launcher market by supporting new companies.
-*   <strong>France</strong> is focused on protecting its established launcher industry and is pushing to revise ESA's "georeturn" rule, which ensures member states receive contracts proportional to their contributions.
-*   <strong>Italy</strong> appears primarily focused on maximizing its georeturn to expand its domestic industrial base.
-These conflicting interests, particularly around launchers and industrial policy, signal potentially difficult negotiations over the future of Europe's role in space.
-<a href="https://spacenews.com/diverging-priorities-shape-opening-day-of-esa-ministerial-2025/">Read full article</a></p>
-<p><strong>Voyager 1 Approaches One-Light-Day Milestone</strong>
-NASA’s Voyager 1 spacecraft, the most distant human-made object, is set to reach a significant milestone. By November 2026, it will be so far from Earth that a radio signal will take a full 24 hours—one light-day—to reach it. Launched in 1977, Voyager 1 entered interstellar space in 2012 and continues to send back data from its radioisotope power source, which is expected to last into the 2030s. The probe's immense distance underscores the scale of the solar system and the challenges of deep-space communication.
-<a href="https://scienceclock.com/voyager-1-is-about-to-reach-one-light-day-from-earth/">Read full article</a></p>
-<p><strong>The Enduring Physics Hurdle for Space-Based Missile Defense</strong>
-An opinion piece argues that renewed proposals for a space-based missile defense shield, similar to the "Star Wars" initiative, ignore fundamental and likely insurmountable physics problems. While intercepting missiles in their boost phase is ideal, the "absenteeism problem" remains: satellites in low Earth orbit are constantly moving and cannot be parked over a single location. To provide continuous global coverage, a constellation of nearly 1,000 satellites would be required at an estimated cost of over $500 billion. Such a system would be easily overwhelmed by simultaneous launches and vulnerable to anti-satellite weapons. Furthermore, its deployment would likely trigger a strategically destabilizing arms race in space.
-<a href="https://spacenews.com/star-wars-redux-the-false-promise-of-space-based-missile-defense/">Read full article</a></p>
-<h3>Science &amp; Society</h3>
-<p><strong>Minimalist Microbe Challenges Definition of Life</strong>
-Scientists have discovered a single-celled organism with a fantastically small genome that challenges the fundamental definition of life. The microbe, named <em>Candidatus Sukunaarchaeum mirabile</em>, was found associated with a dinoflagellate in the Pacific Ocean. Its genome is missing nearly all genes for metabolism, meaning it cannot process nutrients, grow, or produce energy on its own. While other microbes with reduced genomes still perform some metabolic functions for their hosts, <em>Sukunaarchaeum</em> appears to have outsourced everything except for its "replicative core"—the genetic machinery needed to reproduce itself. The discovery suggests cellular life can exist in far more dependent and pared-back forms than previously known.
-<a href="https://www.quantamagazine.org/a-cell-so-minimal-that-it-challenges-definitions-of-life-20251124/">Read full article</a></p>
-<p><strong>The Inevitable Moral Dilemma of Immigration Policy</strong>
-An opinion column argues that for wealthy democracies, any workable immigration policy that limits entry to publicly acceptable levels will inevitably require increasingly "cruel" and coercive measures. The author posits that as global demand to migrate to successful countries rises, enforcement must become harsher over time to remain effective. Even pro-immigration policies create a feedback loop: the more people are allowed in, the more others will want to come, necessitating tougher restrictions at the margin. This creates an inescapable moral dilemma where there is no "kind and gentle" way to enforce limits, forcing even liberal governments to adopt coercive tactics.
-<a href="https://feeds.feedblitz.com/~/929655644/0/marginalrevolution~Why-%e2%80%98Humane%e2%80%99-Immigration-Policy-Ends-in-Cruelty.html">Read full article</a></p>
-<p><strong>The Theological Roots of Mormon Libertarianism</strong>
-An essay summarized by Tyler Cowen explores the deep alignment between the theology of The Church of Jesus Christ of Latter-day Saints (Mormons) and libertarian political philosophy. The connection is rooted in several core LDS doctrines:
-*   <strong>A Universe of Law:</strong> God operates within eternal, predictable laws that humans can also discover through reason and science.
-*   <strong>Human Agency:</strong> Free will is considered a central, pre-mortal choice and a core tenet of human existence. Coercion is therefore viewed as fundamentally "Satanic."
-*   <strong>Eternal Progression:</strong> The belief that humans have infinite potential to learn, progress, and eventually become like God creates a suspicion of political systems that limit human aspiration.
-The historical experience of the LDS church—facing persecution and establishing a self-reliant society—further reinforces a preference for limited government and voluntary mutual aid.
-<a href="https://feeds.feedblitz.com/~/929449037/0/marginalrevolution~Why-are-Mormons-so-Libertarian.html">Read full article</a></p>
-<h3>Market &amp; Policy Briefs</h3>
-<p><strong>OpenAI's Funding Needs Estimated at Over $200 Billion</strong>
-An HSBC estimate suggests that OpenAI will need to raise a minimum of $207 billion by 2030 to sustain its operations and continue losing money at its current rate.
+<p><strong>HSBC Estimates OpenAI Needs Over $200 Billion by 2030</strong>
+According to an estimate from HSBC, OpenAI will need to raise a minimum of $207 billion by 2030 to fund its operations and continue its current trajectory of financial losses.
 <a href="https://ft.com/content/23e54a28-6f63-4533-ab96-3756d9c88bad">Read full article</a></p>
-<p><strong>Prediction Markets to Launch for Sneakers and Collectibles</strong>
-Prediction market Kalshi is partnering with sneaker marketplace StockX to offer event contracts tied to the resale prices of high-demand collectibles. Users will be able to trade on outcomes such as whether a new Jordan sneaker will surpass a certain price threshold or which brand will be a top seller on Black Friday.
+<p><strong>Prediction Markets Launch for Sneaker and Collectible Prices</strong>
+Prediction market Kalshi is partnering with the marketplace StockX to create event contracts based on the resale value of high-demand collectibles. Users will be able to trade on outcomes such as whether a new Jordan sneaker will exceed a certain price threshold after its release or which brands will be bestsellers during major shopping events.
 <a href="https://feeds.feedblitz.com/~/929243990/0/marginalrevolution~Prediction-markets-in-everything.html">Read full article</a></p>
-<p><strong>NATO Chief: Russia Has No Veto Over Ukraine Membership</strong>
-Incoming NATO Secretary-General Mark Rutte stated unequivocally that Russia holds no vote or veto power over Ukraine's potential membership in the alliance. His comments serve as a direct rejection of a recently leaked peace proposal, reportedly backed by Moscow and Washington, that would have required NATO to permanently block Ukraine from joining.
-<a href="https://www.politico.eu/article/mark-rutte-rules-russia-veto-ukraine-joining-nato/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication">Read full article</a></p></div>
+<p><strong>A Look at Qiskit for Quantum Computing</strong>
+Qiskit is an open-source software development kit (SDK) designed for working with quantum computers. The library provides core tools for creating, optimizing, and executing quantum circuits. It includes a transpiler to adapt programs for the specific hardware of different quantum computers and an abstraction layer that allows users to run circuits on systems from various vendors.
+<a href="https://github.com/Qiskit/qiskit">Read full article</a></p>
+<h3>Science &amp; Space</h3>
+<p><strong>Minimalist Microbe Challenges the Definition of Life</strong>
+Scientists have discovered a parasitic archaeon, <em>Candidatus Sukunaarchaeum mirabile</em>, with an extremely small genome that lacks the genes for metabolism. With just 238,000 base pairs, it cannot process nutrients, grow, or maintain itself, making it entirely dependent on a host cell for survival. However, it retains the genetic machinery for its own replication. This is the inverse of other known minimal-genome organisms, which typically shed replication genes while retaining metabolic functions. The discovery suggests life can exist in more dependent forms than previously understood and that a vast amount of microbial diversity may be hidden in such parasitic relationships.
+<a href="https://www.quantamagazine.org/a-cell-so-minimal-that-it-challenges-definitions-of-life-20251124/">Read full article</a></p>
+<p><strong>Voyager 1 to Reach One-Light-Day Milestone</strong>
+By November 2026, NASA’s Voyager 1 spacecraft will be one light-day from Earth, a distance of 16.1 billion miles. At that point, a radio signal will take a full 24 hours to travel from Earth to the probe. Launched in 1977, Voyager 1 is the most distant human-made object and entered interstellar space in 2012. Despite being in space for nearly 50 years, its power source is expected to last into the 2030s, allowing it to continue sending back data.
+<a href="https://scienceclock.com/voyager-1-is-about-to-reach-one-light-day-from-earth/">Read full article</a></p>
+<p><strong>European Space Agency Convenes to Boost Autonomy and Defense</strong>
+Ministers from the European Space Agency's (ESA) 23 member states are meeting to decide on a proposed €22.2 billion budget. The meeting's central themes are enhancing European autonomy, resilience, and security in space. A key new program is the €1.2 billion European Resilience from Space (ERS) initiative, focused on developing security and defense satellites. ESA also hopes to secure funding for its Argonaut lunar cargo lander, which it views as a "currency" to negotiate with NASA for slots for European astronauts on future moon missions.
+<a href="https://spacenews.com/esa-members-to-decide-on-europes-future-in-space-at-ministerial-conference/">Read full article</a></p>
+<p><strong>The Enduring Obstacles to Space-Based Missile Defense</strong>
+An opinion piece argues that renewed proposals for space-based missile interceptors ignore the fundamental physics that makes the concept unworkable. While intercepting missiles during their boost phase is strategically attractive, satellites in low-Earth orbit cannot hover over one location. Providing continuous global coverage would require a cost-prohibitive constellation of nearly 1,000 satellites. Such a system would also be vulnerable to being overwhelmed by simultaneous launches and could be easily disabled by anti-satellite weapons, ultimately triggering a destabilizing arms race.
+<a href="https://spacenews.com/star-wars-redux-the-false-promise-of-space-based-missile-defense/">Read full article</a></p>
+<h3>Politics &amp; Policy</h3>
+<p><strong>European Leaders Reject Russian Veto on Ukraine's NATO Bid</strong>
+Top European officials have firmly dismissed peace proposals that would grant Russia influence over Ukraine's future relationship with NATO. Alliance chief Mark Rutte stated that Russia has "neither a vote nor a veto" on who can join the alliance, directly rebuffing a leaked U.S.-led plan that would have blocked Ukraine from future membership. Separately, the EU's top diplomat, Kaja Kallas, asserted that any lasting peace requires "concrete concessions from the Russian side," adding that the focus must be on what the aggressor must do, not what the victim must sacrifice.
+<a href="https://www.politico.eu/article/russia-must-make-concrete-concessions-for-any-peace-deal-eu-kaja-kallas-says/">Read Kallas article</a> | <a href="https://www.politico.eu/article/mark-rutte-rules-russia-veto-ukraine-joining-nato/">Read Rutte article</a></p>
+<p><strong>The Inevitable Cruelty of Immigration Policy</strong>
+An opinion column argues that for wealthy, successful democracies, any functional immigration policy will eventually offend liberal instincts. The author posits a dilemma: due to ever-rising demand for migration, nations must choose between increasingly oppressive enforcement measures or allowing immigration to reach levels that the public finds unacceptable, risking a backlash that empowers illiberal, anti-immigrant parties. Even pro-immigration policies, by signaling success, attract more migrants and thus require harsher restrictions at the margin.
+<a href="https://feeds.feedblitz.com/~/929655644/0/marginalrevolution~Why-%e2%80%98Humane%e2%80%99-Immigration-Policy-Ends-in-Cruelty.html">Read full article</a></p>
+<h3>Culture &amp; Society</h3>
+<p><strong>Why Latter-day Saint Theology Resonates with Libertarianism</strong>
+An essay explores the theological underpinnings that align the beliefs of Latter-day Saints (Mormons) with libertarian and classical liberal thought. Key concepts include:
+*   <strong>A Universe of Law:</strong> God operates within eternal, discoverable laws, creating a foundation for reason and science.
+*   <strong>Moral Agency:</strong> Free will is a central doctrine. The faith's origin story involves a pre-mortal conflict where spirits chose God's plan of agency over Satan's plan of compulsion. Coercion is therefore considered "literally Satanic."
+*   <strong>Human Potential:</strong> A belief in eternal progression—that humans can become like God—positions political systems that limit individual aspiration as spiritually suspect.
+*   <strong>Historical Experience:</strong> The church's history of persecution by government fostered a deep-seated value for limited government and voluntary mutual aid.
+<a href="https://feeds.feedblitz.com/~/929449037/0/marginalrevolution~Why-are-Mormons-so-Libertarian.html">Read full article</a></p></div>
     </body>
     </html>
     
