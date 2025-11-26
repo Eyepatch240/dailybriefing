@@ -48,7 +48,7 @@ def get_headlines():
     for url in RSS_FEEDS:
         try:
             feed = feedparser.parse(url)
-            for entry in feed.entries[:10]: # Limit to latest 10 per feed to save time
+            for entry in feed.entries[:15]: # Increased to 15 per feed
                 articles.append({
                     "title": entry.title,
                     "link": entry.link,
@@ -67,9 +67,10 @@ def filter_articles(articles):
 
     Based on these user interests: "{USER_INTERESTS}"
     
-    Select the top 10 most relevant articles. 
+    Select the TOP 13-15 most relevant and promising articles (err on the side of more, not fewer).
     Return ONLY a raw JSON list of their URLs, nothing else. 
     Example: ["url1", "url2", "url3"]
+    Respond ONLY with that JSON list. No markdown formatting or commentary.
     """
     
     response = model.generate_content(prompt)
@@ -79,9 +80,9 @@ def filter_articles(articles):
         import json
         selected_urls = json.loads(text)
         return selected_urls
-    except:
-        print("Error parsing LLM selection. Fallback to first 5.")
-        return [a['link'] for a in articles[:5]]
+    except Exception as e:
+        print(f"Error parsing LLM selection ({e}). Fallback to first 8.")
+        return [a['link'] for a in articles[:8]]
 
 def scrape_content(urls):
     print("Scraping full content...")
@@ -96,18 +97,19 @@ def scrape_content(urls):
 def generate_digest(content_text):
     print("Writing the digest...")
     prompt = f"""
-    You are a professional news editor. 
+    You are a professional news editor.
     Here is the full text of several articles:
     
     {content_text}
 
     Task:
-    1. Categorize these articles by topic (e.g., Tech, Politics, Science).
-    2. Write a comprehensive "Morning Briefing" article.
-    3. For each story, provide a detailed summary (readable in 2 minutes).
-    4. MUST include the "SOURCE URL" provided in the text as a clickable link [Read full article](url) at the end of each section.
-    5. Use Markdown formatting.
+    1. Categorize each article by topic (e.g., Tech, Politics, Science).
+    2. Write a curated, concise, and high-signal daily news digest. Use clear, readable language—avoid hype or filler.
+    3. For each story, provide a substantive summary suitable for a sophisticated and time-constrained reader.
+    4. At the end of each section, include the provided "SOURCE URL" as a clickable Markdown link: [Read full article](url).
+    5. Use minimalist Markdown formatting—headings, short paragraph blocks, bullet points where useful. Avoid emojis, exclamation marks, and unnecessary flourishes.
     """
+
     response = model.generate_content(prompt)
     return response.text
 
@@ -119,10 +121,65 @@ def save_html(markdown_content):
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Daily Briefing - {{ date }}</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+        <style>
+            :root {
+                color-scheme: dark;
+            }
+            body {
+                background: #15171a;
+                color: #e9e9ec;
+                font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 42px 18px 72px 18px;
+                font-size: 1.08rem;
+                line-height: 1.75;
+            }
+            h1, h2, h3, h4 {
+                color: #e4e8ee;
+                font-weight: 600;
+                letter-spacing: -0.02em;
+                margin-bottom: .5em;
+                margin-top: 2em;
+            }
+            h1 {
+                font-size: 1.85rem;
+                margin-top: 0.2em;
+                margin-bottom: 0.5em;
+                border-bottom: 1px solid #22242b;
+                padding-bottom: 0.35em;
+            }
+            a {
+                color: #99c6ff;
+                text-decoration: underline;
+                transition: color 0.15s;
+            }
+            a:hover {
+                color: #6aaeff;
+            }
+            code, pre {
+                background: #1e2228;
+                color: #c2c7cf;
+                border-radius: 3px;
+                padding: 0.17em 0.33em;
+            }
+            hr {
+                border: none;
+                border-top: 1px solid #23252d;
+                margin: 2.2em 0 1.2em;
+            }
+            ul {
+                margin-top: 0.6em;
+                margin-bottom: 1.2em;
+                padding-left: 1.3em;
+            }
+            li {
+                margin-bottom: 0.5em;
+            }
+        </style>
     </head>
     <body>
-        <h1>📅 {{ date }}</h1>
+        <h1>Daily Briefing <span style="color:#686d79;font-weight:300;font-size:0.92em;">{{ date }}</span></h1>
         <hr>
         <div>{{ content }}</div>
     </body>
@@ -130,7 +187,7 @@ def save_html(markdown_content):
     """
     
     import markdown
-    html_content = markdown.markdown(markdown_content)
+    html_content = markdown.markdown(markdown_content, extensions=['tables', 'fenced_code', 'codehilite'])
     
     t = Template(html_template)
     final_html = t.render(date=datetime.now().strftime("%Y-%m-%d"), content=html_content)
