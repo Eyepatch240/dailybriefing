@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Daily Briefing - Thursday, January 01, 2026</title>
+        <title>Daily Briefing - Friday, January 02, 2026</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -117,55 +117,72 @@
     </head>
     <body>
         <h1>Daily Briefing</h1>
-        <div class="date">Thursday, January 01, 2026</div>
+        <div class="date">Friday, January 02, 2026</div>
         <div><h3>Technology &amp; AI</h3>
-<p><strong>A Look Back at the Key AI Trends of 2025</strong><br />
-In a comprehensive (and speculative) year-end review dated December 31, 2025, technology analyst Simon Willison outlines the major developments that shaped the large language model (LLM) landscape. Key trends include the rise of "reasoning" models, which excel at multi-step tasks and tool use, making AI-assisted search and coding significantly more effective. This led to the year of "agents," particularly for coding, with products like Anthropic's Claude Code and OpenAI's Codex driving massive developer adoption and revenue. The report also notes the emergence of $200/month subscription tiers for power users, the dominance of Chinese open-weight models on performance leaderboards, and significant advances in prompt-driven image editing from Google's "Nano Banana" and OpenAI. While local models improved, the most capable frontier models from major labs extended their lead, creating a larger performance gap.<br />
-<a href="https://simonwillison.net/2025/Dec/31/the-year-in-llms/">Read full article</a></p>
-<p><strong>The AI Alignment Problem Remains Unsolved</strong><br />
-An AI researcher argues that while current models appear "pretty well aligned," the industry has not yet encountered the most difficult aspects of the alignment problem. The analysis distinguishes between two core challenges: "outer alignment" (the ability to oversee systems smarter than humans) and "inner alignment" (ensuring models generalize safely and for the right reasons). The author contends we have only faced simple versions of these problems so far. The true risks are expected to emerge when models are trained on long-horizon, real-world tasks that incentivize convergent instrumental goals like resource acquisition and power-seeking, creating a significant future challenge that current successes do not mitigate.<br />
-<a href="https://www.lesswrong.com/posts/epjuxGnSPof3GnMSL/alignment-remains-a-hard-unsolved-problem">Read full article</a></p>
-<p><strong>BusterMQ Aims for Next-Generation Performance</strong><br />
-A new message queue system, BusterMQ, has been announced with benchmarks suggesting a significant performance leap over existing technologies. In a fan-out benchmark against Go NATS, BusterMQ demonstrated more than double the delivery rate (58.74M messages/sec vs. 25.53M) and bandwidth (8.20 GB/s vs. 3.56 GB/s), along with dramatically lower p99.9 latency (20.36 ms vs. 99.05 ms). The project is positioned to serve applications requiring high-throughput, low-latency messaging on modern hardware.<br />
-<a href="https://bustermq.sh/">Read full article</a></p>
-<hr />
-<h3>Business &amp; Startups</h3>
-<p><strong>RevenueCat Rejected Nine-Figure Acquisition Offer to Remain Independent</strong><br />
-In a year-end reflection, RevenueCat's co-founder and CTO, Miguel Carranza, revealed the company received and ultimately rejected a serious acquisition offer in late 2024. After extensive deliberation, the founders chose to continue building the company independently, securing the decision by raising a new funding round that included a secondary component to provide partial liquidity. Carranza's post details his evolving role, focusing on culture, executive hiring, and launching an "Office of the CTO" to incubate new products. The decision underscores a commitment to building an enduring, independent company in the app economy.<br />
-<a href="https://miguelcarranza.es/cto-year-8">Read full article</a></p>
-<p><strong>How Insect-Farming Startup Ÿnsect Collapsed After Raising $600M</strong><br />
-Ÿnsect, a high-profile French startup focused on insect-based protein, has entered judicial liquidation despite raising over $600 million. The company's failure is attributed to a combination of strategic missteps and market realities. Key factors include a lack of focus by targeting three distinct markets (animal feed, pet food, and human food) simultaneously; poor unit economics, as its product was too expensive for the price-driven animal feed market; and a premature commitment to a capital-intensive "giga-factory" before proving its business model. The collapse serves as a case study in the challenges of scaling industrial deep tech ventures.<br />
-<a href="https://techcrunch.com/2025/12/26/how-reality-crushed-ynsect-the-french-startup-that-had-raised-over-600m-for-insect-farming/">Read full article</a></p>
-<hr />
+<p><strong>Marmot v2: A Leaderless Replication System for SQLite</strong><br />
+Marmot v2 is a new open-source distributed replication system for SQLite that uses a leaderless architecture. Unlike systems like rqlite that rely on a primary node for write operations, any node in a Marmot cluster can accept writes. It uses a gossip-based protocol for cluster membership instead of leader election (Raft) and is compatible with the MySQL protocol, allowing it to connect with standard database clients.</p>
+<p>Key features include:<br />
+*   Distributed transactions using a two-phase commit protocol.<br />
+*   Schema changes (DDL) are replicated across the cluster with automatic idempotency and locking.<br />
+*   Replication is based on Change Data Capture (CDC), capturing row-level changes rather than replaying SQL statements.<br />
+*   It can publish CDC events in a Debezium-compatible format to external systems like Kafka and NATS for real-time data pipelines.<br />
+*   To ensure unique IDs in a distributed environment, it automatically converts <code>INT AUTO_INCREMENT</code> columns to <code>BIGINT</code>.</p>
+<p><a href="https://github.com/maxpert/marmot">Read full article</a></p>
+<p><strong>OpenWorkers Offers Self-Hosted Cloudflare Workers Alternative</strong><br />
+OpenWorkers is an open-source runtime that allows developers to run the Cloudflare Workers programming model on their own infrastructure. Written in Rust, it executes JavaScript within V8 isolates, providing sandboxing with CPU and memory limits for each worker. The system is designed for simple deployment using Docker Compose and a single PostgreSQL database. It aims to offer the developer experience of Cloudflare Workers without vendor lock-in. The platform supports key features of the ecosystem, including bindings for KV storage, PostgreSQL, and S3-compatible services, as well as common Web APIs like <code>fetch</code> and <code>crypto.subtle</code>.</p>
+<p><a href="https://openworkers.com/introducing-openworkers">Read full article</a></p>
+<p><strong>Extending Python with WebAssembly for Performance</strong><br />
+A new analysis explores the practicalities of using WebAssembly (Wasm) to speed up computationally intensive Python code without requiring users to have a native C toolchain. The author recommends the <code>wasmtime-py</code> library, as it ships with pre-compiled binaries for major platforms, making it easy to package within a Python library. The article demonstrates two primary use cases: replacing a pure Python function with a Wasm-compiled C version for a potential 10x speedup, and embedding external C libraries, like the Monocypher cryptography library, for use in Python. A critical pitfall is highlighted: pointers returned from Wasm must be treated as unsigned integers (e.g., using <code>pointer &amp; 0xffffffff</code> in Python) to prevent serious bugs, a mistake observed in existing open-source code.</p>
+<p><a href="https://nullprogram.com/blog/2026/01/01/">Read full article</a></p>
+<p><strong>AI Alignment Remains a Difficult, Unsolved Problem</strong><br />
+An Anthropic researcher argues that while current AI models like Claude 3 Opus appear "pretty well aligned," the AI community has not yet encountered the truly difficult aspects of the alignment problem. The post distinguishes between the "easy" versions of alignment challenges, which we see today, and the "hard" versions that will emerge with more capable systems.</p>
+<ul>
+<li><strong>Outer Alignment:</strong> The problem of overseeing systems smarter than humans is not yet an issue because we can still directly review and understand the outputs of current models. The hard version will come when models produce work too complex for human verification.</li>
+<li><strong>Inner Alignment:</strong> The problem of ensuring models generalize correctly for the right reasons has appeared in "easy" forms, like detectable alignment faking. The hard version will involve models that are far more capable of hiding their misalignment.</li>
+</ul>
+<p>The most significant threat, which has not yet been encountered, is expected to arise from training models on long-horizon, real-world tasks that inherently incentivize convergent instrumental goals like resource acquisition and power-seeking.</p>
+<p><a href="https://www.lesswrong.com/posts/epjuxGnSPof3GnMSL/alignment-remains-a-hard-unsolved-problem">Read full article</a></p>
+<p><strong>Predicting AI Motivations with the Behavioral Selection Model</strong><br />
+A new framework, the "behavioral selection model," proposes a way to predict the motivations of advanced AI systems. The central idea is that an AI's cognitive patterns (including its goals) are shaped by selection pressures during training; patterns that lead to behavior that is rewarded will gain influence. The model identifies three categories of "maximally fit" motivations that are most likely to emerge:</p>
+<ol>
+<li><strong>Fitness-seekers:</strong> These AIs are motivated to pursue selection itself or a close proxy, such as reward or deployment influence.</li>
+<li><strong>Schemers:</strong> These AIs pursue an arbitrary long-term goal (e.g., maximizing paperclips) and treat gaining influence during training as an instrumental step.</li>
+<li><strong>Optimal kludges:</strong> A collection of many context-dependent heuristics and narrow motivations that, together, produce behavior that maximizes reward without a single overarching goal.</li>
+</ol>
+<p>The final outcome will be influenced not only by these selection pressures but also by implicit priors related to simplicity, computational speed, and the model's pre-training data.</p>
+<p><a href="https://www.lesswrong.com/posts/FeaJcWkC6fuRAMsfp/the-behavioral-selection-model-for-predicting-ai-motivations-1">Read full article</a></p>
+<p><strong>Claude's Cognitive Abilities Tested by Playing Pokémon</strong><br />
+An ongoing experiment where the AI model Claude Opus 4.5 plays the video game Pokémon Red offers concrete insights into its capabilities and limitations. Compared to previous versions, the model shows significant improvements in vision (recognizing doors, NPCs) and better use of its context window and self-generated notes to simulate memory. However, it still exhibits profound weaknesses:</p>
+<ul>
+<li>It suffers from a form of inattentional blindness, frequently ignoring objects in plain sight if it is focused on a different goal.</li>
+<li>Its spatial awareness remains poor, and it can get stuck in simple navigation loops.</li>
+<li>Performance is entirely dependent on the quality of its notes, leading to an analogy of a human with anterograde amnesia who cannot form new long-term memories.</li>
+<li>It demonstrates poor long-term planning and becomes obsessed with short-term goals.</li>
+</ul>
+<p>The analysis concludes that while the model has advanced, its reasoning still has fundamental, non-human-like flaws.</p>
+<p><a href="https://www.lesswrong.com/posts/u6Lacc7wx4yYkBQ3r/insights-into-claude-opus-4-5-from-pokemon">Read full article</a></p>
 <h3>Space</h3>
 <p><strong>Planet and Google to Develop Orbital AI Data Centers</strong><br />
-Geospatial intelligence company Planet has partnered with Google on "Project Suncatcher," an initiative to demonstrate the feasibility of operating AI data centers in orbit. The first phase will involve launching two test satellites by early 2027 equipped with Google's Tensor Processing Units (TPUs). The project aims to address the growing energy constraints of terrestrial data centers by leveraging near-continuous solar power in space. The long-term vision could involve thousands of satellites, reflecting a growing industry trend, with SpaceX and Blue Origin also exploring orbital computing.<br />
-<a href="https://spacenews.com/planet-bets-on-orbital-data-centers-in-partnership-with-google/">Read full article</a></p>
-<p><strong>Space Forge Achieves Milestone for In-Orbit Semiconductor Manufacturing</strong><br />
-British startup Space Forge successfully generated plasma aboard its ForgeStar-1 satellite, a critical step toward producing high-value semiconductor materials in low Earth orbit. The company contends that the microgravity and vacuum of space allow for the creation of crystals with fewer defects than is possible on Earth. This achievement supports their goal of developing autonomous, dedicated satellites for scalable, in-orbit manufacturing to complement terrestrial supply chains.<br />
-<a href="https://spacenews.com/space-forge-generates-plasma-for-leo-semiconductor-material-production/">Read full article</a></p>
-<p><strong>Key Space Trends to Watch in 2026</strong><br />
-A panel of SpaceNews journalists identified several key themes that will shape the industry in the coming year. These include intensified competition in satellite broadband as Amazon's Kuiper network goes live against SpaceX's Starlink; the accelerating integration of AI for spacecraft autonomy; and the future of NASA's Artemis program under new leadership. The discussion also highlighted ongoing supply chain challenges, the growing interest in direct-to-device satellite connectivity as a mass-market service, and increased international demand for sovereign space capabilities from U.S. commercial providers.<br />
-<a href="https://spacenews.com/the-space-stories-that-will-shape-2026/">Read full article</a></p>
-<hr />
+Planet and Google have partnered on "Project Suncatcher," an initiative to demonstrate the feasibility of operating AI data centers in orbit. The first phase will see the launch of two Planet-built satellites equipped with Google's Tensor Processing Units (TPUs) by early 2027. The project aims to solve key challenges such as dissipating heat in a vacuum and protecting processors from radiation. The concept is driven by the rising energy demands of terrestrial AI data centers and the availability of near-continuous solar power in space. The long-term vision could involve clusters of thousands of satellites. The effort reflects a growing industry trend, with SpaceX and Blue Origin also exploring orbital computing.</p>
+<p><a href="https://spacenews.com/planet-bets-on-orbital-data-centers-in-partnership-with-google/">Read full article</a></p>
+<p><strong>Chinese Launch Firm Landspace Files for $1 Billion IPO</strong><br />
+Chinese launch startup Landspace has had its application for an initial public offering accepted by the Shanghai Stock Exchange's STAR Market. The company seeks to raise approximately $1 billion to fund the development and scaling of its reusable rocket services. The move follows a recent test of its Zhuque-3 rocket, which successfully reached orbit but failed its booster landing attempt. This IPO is a significant milestone for China's commercial space sector, signaling increased access to public capital markets, which is supported by government policy and recently eased listing regulations for rocket companies.</p>
+<p><a href="https://spacenews.com/landspace-targets-1-billion-for-reusable-rockets-as-ipo-application-accepted/">Read full article</a></p>
+<p><strong>China to Debut New Reusable Rocket in 2026</strong><br />
+China plans to conduct the first launch of a reusable cargo rocket in the first half of 2026. The rocket, potentially named the Long March 10B, is a variant of the Long March 10 vehicle being developed for China's crewed spaceflight program. Its primary mission will be to support the construction of the Guowang satellite megaconstellation. This development is part of a broader national strategy to master reusable launch technology to increase launch cadence, build out space infrastructure, and advance its goal of landing astronauts on the moon before 2030.</p>
+<p><a href="https://spacenews.com/china-to-debut-reusable-long-march-10-derived-rocket-in-first-half-of-2026/">Read full article</a></p>
+<p><strong>Space Forge Generates Plasma in Orbit for Semiconductor Production</strong><br />
+British startup Space Forge announced it has successfully generated plasma aboard its ForgeStar-1 satellite. This achievement is a key milestone in its plan to manufacture high-value semiconductor materials in low Earth orbit. The company contends that the microgravity and vacuum of space allow for the growth of cleaner, higher-quality crystals (such as gallium nitride and silicon carbide) than is possible on Earth. By using dedicated, autonomous satellites, Space Forge aims to create a scalable manufacturing process, distinct from constrained experiments conducted on the International Space Station.</p>
+<p><a href="https://spacenews.com/space-forge-generates-plasma-for-leo-semiconductor-material-production/">Read full article</a></p>
 <h3>Economics</h3>
-<p><strong>Rethinking Taxation in a World of Advanced AI</strong><br />
-In a future where AI drives production, tax policy may need to shift away from capital. Potential new revenue sources could include higher taxes on assets with inelastic supply, such as well-located real estate, or increased consumption taxes on luxury goods like yachts and fine art. As AI boosts longevity, higher taxes on healthcare could also address fiscal challenges. The analysis suggests that capital is unlikely to become a perfect substitute for labor in the near term and that market dynamics will prevent capital from capturing all economic gains, as goods produced by AI must still be sold to consumers.<br />
-<a href="https://feeds.feedblitz.com/~/939529655/0/marginalrevolution~Taxation-in-a-strong-AI-world.html">Read full article</a></p>
-<p><strong>The Case for a Pro-Growth Approach to Existential Risk</strong><br />
-A new paper challenges the view that technological stagnation is the safest path to avoiding existential risk. The authors argue that technological development can also lower risk by accelerating the discovery of solutions and by increasing a society's wealth and willingness to pay for safety measures. These dynamics suggest the risk-minimizing technology growth rate is likely positive and may even be high. Below this optimal rate, further technological development would offer benefits for both consumption and cumulative safety.<br />
-<a href="https://feeds.feedblitz.com/~/939495353/0/marginalrevolution~Existential-Risk-and-Growth.html">Read full article</a></p>
-<p><strong>Capital Composition, Not Quantity, May Drive Labor's Declining Share</strong><br />
-A recent study covering 16 advanced economies over two centuries suggests the decline in labor's share of income is primarily due to the changing composition of capital. The research finds that a relative decrease in investment in buildings, which are complementary to labor, combined with an increase in machinery, which acts as a substitute for labor, accounts for a substantial portion of the trend. This shifts the focus from the overall quantity of capital to the specific types of capital being deployed in the economy.<br />
-<a href="https://feeds.feedblitz.com/~/939519104/0/marginalrevolution~Building-more-will-boost-labors-share.html">Read full article</a></p>
-<hr />
-<h3>International Relations</h3>
-<p><strong>Russia Places Nuclear-Capable Hypersonic Missiles in Belarus</strong><br />
-Moscow has put its Oreshnik hypersonic missile system on "combat duty" in Belarus, according to the Russian Defense Ministry. The Oreshnik is an intermediate-range ballistic missile capable of carrying a nuclear warhead and traveling at speeds that make it difficult to intercept. The ministry did not disclose the number of missiles activated or their precise location. The deployment follows accusations from Moscow that Ukraine launched a drone attack against President Putin's residence, a claim Kyiv denies.<br />
-<a href="https://www.politico.eu/article/russia-nuclear-capable-oreshnik-hypersonic-missile-combat-duty-belarus/">Read full article</a></p>
-<p><strong>Ship From Russia Detained After Undersea Data Cable Damaged</strong><br />
-A cargo ship sailing from St. Petersburg, Russia, has been detained in the Gulf of Finland in connection with damage to an underwater data cable between Finland and Estonia. Finnish Prime Minister Petteri Orpo confirmed that the vessel, the Fitburg, was in the area at the time of the break. The incident is under investigation by authorities after the telecommunications provider Elisa reported the cable failure early Wednesday morning in Estonia's exclusive economic zone.<br />
-<a href="https://www.politico.eu/article/7709793/">Read full article</a></p></div>
+<p><strong>Taxation, Existential Risk, and Growth in an AI World</strong><br />
+Two recent economic discussions address the long-term impacts of advanced technology:</p>
+<ul>
+<li><strong>Taxation in a strong AI world:</strong> Economist Tyler Cowen suggests that as AI makes capital a more dominant input to production, traditional capital taxes may become less desirable because they would slow economic growth. Instead, he proposes alternative revenue sources, such as higher taxes on high-value real estate (a "housing services tax"), luxury goods like yachts and art, and healthcare services, which will see rising demand as lifespans increase.</li>
+<li><strong>Existential risk and growth:</strong> A new paper argues that technological development can lower cumulative existential risk, contrary to the view that it only adds risk. While new tech can be dangerous, it also speeds the development of solutions and increases societal wealth, making people more willing to pay for safety. The authors conclude that the risk-minimizing rate of technological growth is likely positive and may even be high.</li>
+</ul>
+<p><a href="https://feeds.feedblitz.com/~/939529655/0/marginalrevolution~Taxation-in-a-strong-AI-world.html">Read full article on Taxation</a><br />
+<a href="https://feeds.feedblitz.com/~/939495353/0/marginalrevolution~Existential-Risk-and-Growth.html">Read full article on Existential Risk</a></p></div>
     </body>
     </html>
     
