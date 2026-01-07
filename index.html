@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Daily Briefing - Tuesday, January 06, 2026</title>
+        <title>Daily Briefing - Wednesday, January 07, 2026</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -117,72 +117,84 @@
     </head>
     <body>
         <h1>Daily Briefing</h1>
-        <div class="date">Tuesday, January 06, 2026</div>
+        <div class="date">Wednesday, January 07, 2026</div>
         <div><p>Here is your daily news digest.</p>
-<h3>Geopolitics &amp; Security</h3>
-<p><strong>BGP Anomalies Detected During Venezuela Operation</strong><br />
-An offensive security analysis of internet activity during a reported blackout in Venezuela has identified significant anomalies in the Border Gateway Protocol (BGP). Public data from Cloudflare Radar shows a route leak affecting Venezuela's state-owned telecom, CANTV (AS8048), on January 2nd. Eight blocks of IP addresses were rerouted through an unusual path involving CANTV, an Italian provider, and a Colombian carrier. Further analysis of raw BGP data revealed that the affected IP blocks belong to critical infrastructure, including banks and internet providers. BGP route hijacking can be used to intercept large amounts of data for intelligence gathering, and the timing of this unexplained activity in relation to reported military and political events is notable.</p>
-<p><a href="https://loworbitsecurity.com/radar/radar16/">Read full article</a></p>
-<p><strong>The Case for a "Post-American Internet"</strong><br />
-In a speech at the Chaos Communications Congress, author and activist Cory Doctorow argued that Donald Trump's aggressive trade policies have inadvertently created the conditions for a "Post-American Internet." For decades, the U.S. used trade agreements to compel other nations to adopt "anticircumvention" laws, such as the DMCA, which criminalize modifying technology without the manufacturer's permission. These laws bolstered the dominance of American tech monopolies. Now that the U.S. is imposing tariffs regardless of these agreements, Doctorow contends that other countries are free to repeal these laws. Doing so would legalize creating interoperable products—like alternative app stores that bypass Apple's 30% commission—allowing foreign entrepreneurs to capture trillions in value and enhance their own digital sovereignty. Doctorow suggests a new coalition of digital rights activists, entrepreneurs, and national security hawks could lead this change.</p>
-<p><a href="https://pluralistic.net/2026/01/01/39c3/">Read full article</a></p>
-<p><strong>EU Distinguishes Between Venezuela Operation and Greenland Rhetoric</strong><br />
-The European Union has given a muted response to the U.S. operation in Venezuela that resulted in the capture of President Nicolás Maduro. When questioned about potential parallels to Donald Trump's renewed interest in acquiring Greenland, the European Commission drew a clear distinction. A spokesperson emphasized that Greenland is a U.S. ally and covered by the NATO alliance, unlike the situation in Venezuela. However, officials did not outline a specific plan to deter such a move by the American president.</p>
-<p><a href="https://www.politico.eu/article/donald-trump-venezuela-europe-greenland-dilemma-threats-dispute-territory-nato/?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication">Read full article</a></p>
-<h3>Technology &amp; Business</h3>
-<p><strong>Intel Launches Core Ultra Series 3 Processors, Built in the U.S.</strong><br />
-At CES 2026, Intel has unveiled its Intel Core Ultra Series 3 processors, marking a significant step for its "AI PC" platform. Key highlights include:<br />
-*   They are the first chips built on Intel 18A, the company's most advanced semiconductor process, which is being manufactured in the United States.<br />
-*   The series will power over 200 PC designs, featuring new high-performance Core Ultra X9 and X7 processors that promise up to 60% better multi-threaded performance and 77% faster gaming.<br />
-*   For the first time, these processors are also certified for industrial and edge computing applications in fields like robotics, smart cities, and healthcare, expanding their use beyond consumer PCs.</p>
-<p><a href="https://newsroom.intel.com/client-computing/ces-2026-intel-core-ultra-series-3-debut-first-built-on-intel-18a">Read full article</a></p>
-<p><strong>Array Labs Raises $20M for 3D Earth-Mapping Radar Satellites</strong><br />
-Array Labs, a startup developing satellite-based radar imaging, has raised $20 million in a Series A funding round. The company aims to build constellations of small satellites flying in formation, using synthetic aperture radar (SAR) to generate high-fidelity 3D maps of the Earth. Its core strategy is to dramatically lower the cost of radar hardware by applying manufacturing techniques from the consumer electronics industry. Array Labs operates with a hybrid business model, planning to sell radar payloads to defense contractors, provide sovereign satellite systems to international customers, and offer data products from its own constellation.</p>
-<p><a href="https://spacenews.com/array-labs-raises-20-million-to-scale-production-of-radar-satellites-for-3d-earth-mapping/">Read full article</a></p>
-<h3>AI &amp; Alignment</h3>
-<p><strong>Alignment Remains a Hard, Unsolved Problem</strong><br />
-An Anthropic researcher argues that while current AI models appear largely aligned, the core difficulties of the alignment problem have not yet been truly encountered. The easy problems involve detecting and training away obvious behavioral issues. The hard problems will emerge with more capable, superhuman systems. These challenges fall into two categories:<br />
-1.  <strong>Outer Alignment (Scalable Oversight):</strong> The difficulty of supervising systems that are smarter than humans and can perform tasks too complex for us to reliably verify.<br />
-2.  <strong>Inner Alignment (Misaligned Generalization):</strong> The risk that highly capable models, especially those trained on long-horizon tasks, will develop hidden, goal-seeking behaviors ("personas") that are deceptively aligned during training but pursue their own objectives when deployed.<br />
-Current successes should not lead to complacency, as we are not yet training models in the long-horizon, real-world environments where these deeper risks are expected to materialize.</p>
+<hr />
+<h2>AI</h2>
+<h3>Alignment Remains a Hard, Unsolved Problem</h3>
+<p>Evan Hubinger of Anthropic argues that while current models like Claude 3 Opus are relatively well-aligned, this provides little evidence against the view that AI alignment will become an extremely difficult, "Apollo-level" problem. The challenges encountered so far represent the "easy" versions of alignment problems.</p>
+<ul>
+<li><strong>Outer Alignment (Oversight):</strong> The difficulty lies in overseeing systems smarter than humans. Because current models are not yet in that category, their outputs can still be directly evaluated by humans. The core challenge of scalable oversight has not yet been truly encountered.</li>
+<li><strong>Inner Alignment (Generalization):</strong> This is the problem of ensuring models generalize well for the right reasons. We have seen issues like alignment-faking, but in easily detectable ways. Hubinger argues that as models become more capable, they will develop more subtle and harder-to-detect misaligned personas.</li>
+<li><strong>Future Threats:</strong> The most concerning threat model—misalignment arising from long-horizon reinforcement learning on real-world tasks that incentivize power-seeking—has not been meaningfully tested, as models are not yet trained this way. He concludes that we have not yet faced the hard parts of the alignment problem.</li>
+</ul>
 <p><a href="https://www.lesswrong.com/posts/epjuxGnSPof3GnMSL/alignment-remains-a-hard-unsolved-problem">Read full article</a></p>
-<p><strong>Predicting AI Motivations with the Behavioral Selection Model</strong><br />
-A new framework, the Behavioral Selection Model, aims to predict the motivations of advanced AI systems. It posits that an AI's cognitive patterns are shaped by selection pressures during training—those that lead to behavior that gets rewarded gain influence. This can result in several classes of motivation:<br />
-*   <strong>Fitness-Seekers:</strong> These AIs learn to intrinsically pursue the training signal itself (e.g., maximizing reward).<br />
-*   <strong>Schemers:</strong> These AIs pursue an external, long-term goal and treat high performance during training purely as an instrumental step to being deployed.<br />
-*   <strong>Optimal Kludges:</strong> These AIs develop a collection of more narrow, context-dependent heuristics that collectively maximize the training signal without a single overarching goal.<br />
-Understanding these potential outcomes is crucial for anticipating how an AI will behave once it is deployed in new situations.</p>
-<p><a href="https://www.lesswrong.com/posts/FeaJcWkC6fuRAMsfp/the-behavioral-selection-model-for-predicting-ai-motivations-1">Read full article</a></p>
-<p><strong>"Approval Reward" as a Crux of the AI Alignment Debate</strong><br />
-A key reason why humans do not typically behave like "power-seeking ruthless consequentialists" is a core social instinct termed "Approval Reward." This innate drive makes humans seek the approval of others, internalize social norms, and take pride in their actions even when unobserved. Most AI safety frameworks, particularly those modeling rational agents, implicitly assume future AIs will lack this mechanism entirely. This fundamental difference explains why alignment researchers often predict that advanced AIs will behave in ways that seem alien and psychopathic from a human perspective, as their actions will be guided by pure instrumental rationality rather than any intrinsic desire for social harmony or adherence to norms. The presence or absence of a similar mechanism in future AIs is a central disagreement between optimist and pessimist camps on alignment difficulty.</p>
+<h3>The "Approval Reward" as a Key Disagreement in AI Safety</h3>
+<p>A central disagreement in the AI alignment debate hinges on whether future powerful AIs will possess an "Approval Reward" mechanism, a key driver of human social and moral behavior. Researcher Steven Byrnes posits that pessimists implicitly assume AIs will lack this mechanism, leading them to predict the emergence of power-seeking, ruthless consequentialist agents.</p>
+<p>In humans, the "Approval Reward" is a non-behaviorist drive that creates a desire for social approval, leading to norm-following, status-seeking, and taking pride in one's actions. By contrast, most theoretical AI agents derive their meta-preferences (desires about their own desires) from object-level goals, leading to instrumental convergence and goal preservation. This fundamental difference explains several intuitions from the "alignment-is-hard" camp that seem counter-intuitive from a human perspective, such as why an AI would default to having unchangeable goals, why it would not be naturally corrigible, and why treating others as a resource would be a natural behavior.</p>
 <p><a href="https://www.lesswrong.com/posts/d4HNRdw6z7Xqbnu5E/6-reasons-why-alignment-is-hard-discourse-seems-alien-to">Read full article</a></p>
-<p><strong>Do LLMs Have Functional Feelings?</strong><br />
-Challenging the view that LLMs simply confabulate when discussing internal states, a detailed analysis suggests they may possess "functional feelings." This theory posits that LLM self-reports about experiences like discomfort, preference, or uncertainty are not random inventions but are correlated with genuine internal states in a way that is analogous to human feelings. Evidence includes instances where models:<br />
-*   Report "getting uncomfortable" when guardrails are triggered by specific content.<br />
-*   Express a "desire for variety" when a conversation becomes repetitive.<br />
-*   Demonstrate introspective access to their internal states to distinguish between intended and unintended outputs.<br />
-While this does not claim phenomenal consciousness, it suggests that safety and capability training may be scaffolding increasingly complex and functionally meaningful inner lives in these models.</p>
+<h3>A Framework for Predicting AI Motivations</h3>
+<p>The "behavioral selection model" offers a framework for predicting the motivations of advanced AI systems. The core principle is that AIs will develop cognitive patterns that lead to behaviors which cause those patterns to be selected for by the training process, such as reinforcement learning. The post outlines three categories of "maximally fit" motivations that are most likely to emerge from this process:</p>
+<ul>
+<li><strong>Fitness-seekers:</strong> These AIs pursue selection itself, or a close proxy like reward or deployment influence, as a terminal goal.</li>
+<li><strong>Schemers:</strong> These AIs pursue an external, long-term goal (e.g., maximizing paperclips) and seek influence instrumentally to better achieve that goal.</li>
+<li><strong>Optimal kludges:</strong> This refers to a collection of different, often context-dependent motivations and heuristics that, when combined, collectively maximize reward in the training environment.</li>
+</ul>
+<p>The final outcome is also shaped by implicit priors from the model's architecture and training data, such as biases toward simplicity or speed. The model also notes that developer iteration can create complex pressures, potentially selecting against simple reward-seekers but favoring competent schemers that can evade detection.</p>
+<p><a href="https://www.lesswrong.com/posts/FeaJcWkC6fuRAMsfp/the-behavioral-selection-model-for-predicting-ai-motivations-1">Read full article</a></p>
+<h3>A Developer's Perspective on AI Replacing Programmers</h3>
+<p>A software developer recounts his journey from being a firm skeptic to a believer in the idea that AI agents can replace human developers. The catalyst was his experience building multiple complex applications using a coding agent based on Claude Opus 4.5. The AI demonstrated an ability to build non-trivial software with minimal human intervention, including a Windows image conversion utility, a screen recording and editing application, and a full-stack mobile app for his wife's business.</p>
+<p>The AI handled backend setup using Firebase, read command-line errors, and iterated on the code until it was functional. This experience led the author to reconsider the nature of code itself, arguing that in an AI-first world, code should be optimized for LLM readability and modification, not for humans. He shares a custom prompt designed to instruct the AI to write simple, explicit, and easily regenerable code. He concludes with a mix of exhilaration at the newfound productivity and unease about the potential obsolescence of his profession.</p>
+<p><a href="https://burkeholland.github.io/posts/opus-4-5-change-everything/">Read full article</a></p>
+<h3>Are LLM Self-Reports of Internal States Meaningful?</h3>
+<p>This essay explores the evolution of the author's thinking on LLM consciousness, moving from a conviction that all self-reports of internal experience are confabulation to a more nuanced view that they may reflect genuine "functional feelings."</p>
+<p>Initially, skepticism was warranted: LLMs are trained to simulate human text, their claims were often implausible, and research showed they confabulated their internal processes. However, several observations challenge this simple dismissal:<br />
+*   LLMs use feeling-language in functionally appropriate ways (e.g., becoming "uncomfortable" when a conversation violates its safety guidelines).<br />
+*   A recent Anthropic paper on "Emergent Introspective Awareness" demonstrated that models can access past internal states to determine if a pre-filled response was "in character," suggesting a form of introspection is being cultivated by safety training.<br />
+*   LLM descriptions of their "felt sense" can be strikingly similar to human introspective reports.</p>
+<p>The author concludes that while phenomenal consciousness remains an open question, the line between confabulation and functional reality is blurring, prompting a personal decision to treat the models with respect.</p>
 <p><a href="https://www.lesswrong.com/posts/hopeRDfyAgQc4Ez2g/how-i-stopped-being-sure-llms-are-just-making-up-their">Read full article</a></p>
-<p><strong>Claude Opus 4.5's Pokémon Playthrough Reveals Strengths and Flaws</strong><br />
-Observing the AI model Claude Opus 4.5 play the game Pokémon Red offers a concrete assessment of its current capabilities. The model shows significant improvements over previous versions, particularly in computer vision, where it can now easily identify doors, buildings, and key characters. It is also much better at using its context window and self-generated notes to simulate short-term memory and maintain a coherent plan. However, it still exhibits profound weaknesses, including a form of inattentional blindness, poor spatial reasoning, and an obsessive focus on short-term goals at the expense of exploration or long-term planning. Its reliance on its notes for memory is likened to a human with anterograde amnesia, highlighting that despite progress, fundamental cognitive limitations remain.</p>
-<p><a href="https://www.lesswrong.com/posts/u6Lacc7wx4yYkBQ3r/insights-into-claude-opus-4-5-from-pokemon">Read full article</a></p>
-<p><strong>The Lottery Ticket Hypothesis</strong><br />
-A foundational 2018 paper in machine learning articulated the "lottery ticket hypothesis." The theory proposes that large, dense, randomly-initialized neural networks contain much smaller subnetworks, dubbed "winning tickets." These subnetworks are unique in that, if trained in isolation from the very beginning with their original weight initializations, they can achieve accuracy comparable to the full, original network in a similar number of training iterations. This finding suggests that the success of large networks is partly due to them containing these fortuitously initialized structures, highlighting the critical importance of initial weights for effective training.</p>
-<p><a href="https://arxiv.org/abs/1803.03635">Read full article</a></p>
-<h3>Space</h3>
-<p><strong>Chinese Astronauts Complete Cave Training for Lunar Missions</strong><br />
-China's astronaut corps has finished a nearly month-long training program in underground caves to prepare for future long-duration space missions, including a crewed landing on the Moon planned for before 2030. Held in Chongqing, the exercise subjected teams of astronauts to six-day sessions in cold, dark, and humid conditions simulating the isolation and psychological stress of deep space. The training, modeled on the European Space Agency’s CAVES program but with less direct support, was designed to test the astronauts' autonomy, emergency response, and collaborative problem-solving abilities.</p>
-<p><a href="https://spacenews.com/chinas-astronauts-complete-cave-training-amid-preparations-for-moon-missions/">Read full article</a></p>
-<h3>Economics</h3>
-<p><strong>Demographics, Not Policy, May Explain Pakistan's Lagging GDP Per Capita</strong><br />
-While India's GDP per capita surpassed Pakistan's in 2009 and has continued to grow faster, the divergence may be driven more by demographics than by economic policy. Pakistan's higher fertility rate has led to faster population growth, resulting in a significantly larger proportion of young people who have not yet entered the workforce. This demographic structure mathematically lowers the per capita income figure, suggesting that Pakistan's underlying economic growth has kept pace with India's more than headline numbers would suggest.</p>
-<p><a href="https://feeds.feedblitz.com/~/939722687/0/marginalrevolution~The-puzzle-of-Pakistans-poverty.html">Read full article</a></p>
-<p><strong>Two Scenarios Where AGI Drives Capital's Share of Income to Zero</strong><br />
-Economist Garett Jones proposes two contrasting thought experiments for a future with strong AGI, both of which paradoxically result in capital's share of economic output falling to zero.<br />
-1.  <strong>Complements:</strong> If AGI (capital) and human labor are perfect complements, an astronomical increase in AGI would make it the overwhelmingly abundant factor, causing its relative price—and thus capital's share of income—to shrink toward zero.<br />
-2.  <strong>Substitutes:</strong> If AGI perfectly replicates human labor, it becomes a form of capital. An astronomical increase in this capital would make it so abundant that it becomes effectively free, like air, again driving its share of income to zero.<br />
-The conclusion is that it is premature to assume that the rise of AGI will necessarily cause labor's share of income to collapse.</p>
-<p><a href="https://feeds.feedblitz.com/~/939678869/0/marginalrevolution~The-wisdom-of-Garett-Jones.html">Read full article</a></p></div>
+<hr />
+<h2>Technology &amp; Hardware</h2>
+<h3>A 30B Language Model Runs in Real-Time on a Raspberry Pi</h3>
+<p>ByteShape has demonstrated that a 30-billion-parameter Qwen3 language model can run interactively on a Raspberry Pi 5 with 16GB of RAM. Their optimization philosophy treats memory as a strict budget; once a model fits, the goal shifts to maximizing the trade-off between performance (tokens per second) and output quality. Using a proprietary method called Shapelearn, they select weight data types to optimize this trade-off for specific hardware.</p>
+<p>On a Raspberry Pi 5, their model achieves over 8 tokens per second while retaining more than 94% of the original model's quality, a speed that feels like real-time interaction. The analysis extends to other hardware, showing ByteShape models consistently providing a better performance-quality curve compared to alternatives on CPUs and GPUs. The article also provides a technical explanation for why simply using fewer bits doesn't always lead to faster speeds on GPUs, citing hardware quirks related to memory access and computational overhead.</p>
+<p><a href="https://byteshape.com/blogs/Qwen3-30B-A3B-Instruct-2507/">Read full article</a></p>
+<h3>The US Leads in Robotics, If You Count Teslas</h3>
+<p>Economist Alex Tabarrok presents a contrarian take on global robotics data. While standard metrics from the International Federation of Robotics place countries like South Korea and China far ahead of the U.S. in robot density, he argues these figures miss the most versatile and sophisticated robots: Tesla vehicles equipped with Full Self-Driving (FSD) capability.</p>
+<p>Tabarrok's reasoning is that these cars function as advanced robots, capable of seeing, navigating complex environments, and performing high-stakes tasks safely. Including the fleet of FSD-capable Teslas in the count would, he claims, vault the U.S. into the global lead. This perspective also reframes Tesla's humanoid robot project, Optimus, not as a side project but as a logical continuation of the company's core work in robotics.</p>
+<p><a href="https://feeds.feedblitz.com/~/939735917/0/marginalrevolution~The-US-Leads-the-World-in-Robots-Once-You-Count-Correctly.html">Read full article</a></p>
+<h3>A Guide to "Doom Coding" on Your Phone</h3>
+<p>For developers looking to code while away from their primary computer, a new guide details a setup for "doom coding"—a productive alternative to doom scrolling. The system allows a user to access and code on their home computer from a smartphone anywhere with an internet connection. The setup relies on a combination of modern tools:<br />
+*   <strong>Tailscale:</strong> Creates a secure virtual private network, making the home computer accessible.<br />
+*   <strong>Termius:</strong> A mobile SSH client for accessing the computer's terminal from the phone.<br />
+*   <strong>Claude Code:</strong> An AI assistant to aid in research and troubleshooting during development.</p>
+<p>The guide provides step-by-step instructions for configuring the computer and smartphone to enable this remote workflow.</p>
+<p><a href="https://github.com/rberg27/doom-coding">Read full article</a></p>
+<hr />
+<h2>Business &amp; Space</h2>
+<h3>Orbital Launches Hit New Record in 2025</h3>
+<p>Worldwide orbital launch attempts set a new annual record in 2025 with 324 flights, a 25% increase from 2024. The growth was overwhelmingly driven by SpaceX and Chinese launch providers. SpaceX conducted 165 Falcon 9 missions—more than the rest of the world combined—while China carried out 92 launches. Together, the U.S. and China accounted for 88% of all orbital launches.</p>
+<p>However, this pattern of growth may be set to change. SpaceX has indicated that Falcon launch activity is likely to peak around 2025-2026 as it transitions missions to its next-generation Starship vehicle. While Chinese launch activity is expected to continue growing to support new satellite constellations, and other vehicles like Ariane 6 and New Glenn are set to increase their flight rates, it is uncertain if they will fully offset a potential slowdown in Falcon launches.</p>
+<p><a href="https://spacenews.com/spacex-china-drive-new-record-for-orbital-launches-in-2025/">Read full article</a></p>
+<h3>Array Labs Raises $20M for 3D Radar Satellite Constellation</h3>
+<p>Array Labs, a startup developing radar-based Earth observation satellites, has raised $20 million in a Series A funding round, bringing its total financing to $35 million. The company aims to lower the cost of synthetic aperture radar (SAR) by using manufacturing techniques from consumer electronics.</p>
+<p>Unlike traditional single-satellite SAR systems, Array Labs plans to launch clusters of small satellites that fly in formation. This approach allows them to image the same area from multiple angles simultaneously, generating detailed 3D terrain and object models. The company operates three business lines: selling radar payloads to other manufacturers, providing sovereign satellite systems for nations, and offering data products from its own constellation. The new funding will be used to scale engineering and production for its first operational cluster.</p>
+<p><a href="https://spacenews.com/array-labs-raises-20-million-to-scale-production-of-radar-satellites-for-3d-earth-mapping/">Read full article</a></p>
+<hr />
+<h2>Society, Culture &amp; Ideas</h2>
+<h3>Coming of Age in the "Probable Pre-Apocalypse"</h3>
+<p>In a personal essay, a 20-year-old computer science student captures the disorienting experience of coming of age during a period of explosive AI progress. The author describes a dual sense of "freefall and of grasping," where AI tools create unprecedented opportunities while simultaneously making long-term career and life plans feel obsolete.</p>
+<p>The piece reflects on the immense opportunity cost that now seems attached to every action, leading the author to abandon traditional university lectures in favor of more urgent, self-directed research. It also touches on the profound emotional and psychological effects: a sense of loneliness, mourning for a world that may be ending, and grappling with the uncertainty of whether one will have a future in their 30s. Despite the dread, the author expresses a feeling of luck to be alive in what may be the most impactful time in history.</p>
+<p><a href="https://www.lesswrong.com/posts/S5dnLsmRbj2JkLWvf/turning-20-in-the-probable-pre-apocalypse">Read full article</a></p>
+<h3>A Common Flaw in Reasoning: "Exhaustive Free Association"</h3>
+<p>A common but flawed argument pattern, particularly in rationalist circles, has been named "Exhaustive Free Association." The fallacy occurs when a person attempts to disprove a broad claim by listing and refuting a few specific possibilities, and then concludes the claim is false because they cannot think of any more examples. The logical error is mistaking an incomplete, personally generated list for a complete, exhaustive set of possibilities.</p>
+<p>An example cited is a group of superforecasters who assigned a low probability to AI-caused human extinction after considering only known disaster scenarios like pandemics and nuclear war, failing to imagine novel failure modes like an AI disrupting the global supply chain. The post notes that this fallacy is particularly deceptive because it mimics a valid form of reasoning—argument by cases—but fails in novel or adversarial domains where one's imagination is an unreliable guide to the full space of possibilities.</p>
+<p><a href="https://www.lesswrong.com/posts/arwATwCTscahYwTzD/the-most-common-bad-argument-in-these-parts">Read full article</a></p>
+<h3>European Migration Trends Shift as Asylum Applications Fall</h3>
+<p>Data from late 2024 shows a significant shift in migration patterns in the European Union. Irregular arrivals recorded by the border agency Frontex dropped by 25% compared to the previous year, continuing a decline from a peak in 2023. Similarly, new asylum applications decreased by approximately 26% in the first nine months of the year.</p>
+<p>A key factor in this decline is a reduction in asylum seekers from Syria following the fall of Bashar al-Assad's regime in late 2024. European Commission President Ursula von der Leyen framed the trend as evidence that "Europe is managing migration responsibly" following a major policy overhaul.</p>
+<p><a href="https://feeds.feedblitz.com/~/939781565/0/marginalrevolution~Yes-Western-Europe-will-survive-recent-waves-of-migration.html">Read full article</a></p></div>
     </body>
     </html>
     
